@@ -75,11 +75,71 @@
 @keyframes forest-bloom{0%{background-position:0% 50%;transform:scale(1)}100%{background-position:100% 50%;transform:scale(1.06)}}@keyframes orbit{to{transform:translate(-22px,19px) rotate(8deg)}}@keyframes cover-float-left{0%,100%{transform:rotate(-13deg) translateY(12px)}50%{transform:rotate(-10deg) translateY(-4px)}}@keyframes cover-float-center{0%,100%{transform:rotate(1deg) translateY(0)}50%{transform:rotate(-1deg) translateY(-12px)}}@keyframes cover-float-right{0%,100%{transform:rotate(12deg) translateY(9px)}50%{transform:rotate(9deg) translateY(-6px)}}@keyframes letter-breathe{50%{transform:translateY(-8px) rotate(2deg)}}
 @media(max-width:900px){.topbar{padding:0 20px}.brand{min-width:150px}.nav{gap:17px}.nav a{font-size:10px}.hero-grid{grid-template-columns:minmax(300px,1fr) minmax(340px,1fr);gap:20px}.book-stage{height:390px}.cover{width:clamp(145px,19vw,185px)}.cover-pink{left:2%}.cover-green{right:0}.wordmark{font-size:13.6vw}.series-grid{gap:11px}.cover-window{height:260px}.series-cover{height:235px}.series-copy{padding:15px 13px}.series-copy h3{font-size:20px}.series-detail{font-size:11px}.series-buy .price{font-size:19px}.series-buy a{font-size:9px;padding:10px}.event-main{gap:24px}.ticket{width:220px;min-height:210px}}
 @media(max-width:640px){.topbar{height:auto;min-height:68px;padding:10px 16px;flex-wrap:wrap;gap:8px}.brand{min-width:0}.brand-seal{width:34px;height:34px}.brand-name{font-size:17px}.nav{order:3;width:100%;justify-content:space-between;overflow:auto;padding:5px 0 2px}.nav a{white-space:nowrap;font-size:10px}.nav-cta{margin-left:auto;padding:11px 12px;font-size:9px}.hero{min-height:850px;padding:21px 21px 28px}.hero-frame{inset:10px}.hero-top{font-size:7px;letter-spacing:.09em;padding-bottom:12px}.hero-grid{grid-template-columns:1fr;gap:0;padding:38px 2px 0;min-height:0}.hero-copy{position:relative;z-index:3}.hero h1{font-size:clamp(49px,12vw,74px);max-width:520px}.hero-lede{max-width:355px;font-size:13px;margin:17px 0 20px}.hero-actions{gap:16px}.button{min-width:195px;padding:14px 15px}.hero-note{display:none}.book-stage{height:335px;margin-top:9px}.book-stage:before{height:215px;bottom:26px}.book-orbit{width:280px}.cover{width:clamp(135px,39vw,174px)}.cover-pink{left:1%;top:59px}.cover-blue{left:30%;top:36px}.cover-green{right:1%;top:66px}.stage-caption{bottom:0;font-size:7px}.wordmark{font-size:15.4vw;left:3.5%;bottom:68px;letter-spacing:-.11em}.wordmark sup{font-size:9px;margin-left:4px}.hero-bottom{left:24px;right:24px;bottom:20px;font-size:6px;letter-spacing:.06em}.hero-bottom span:last-child{text-align:right}.marquee{font-size:10px;gap:10px;padding:14px}.marquee span{font-size:9px}.section-pad{padding:68px 21px}.section-head{display:block;margin-bottom:28px}.section-title,.finder-title,.story-title{font-size:clamp(48px,11.5vw,69px)}.section-intro{font-size:12px;margin-top:17px}.series-grid{grid-template-columns:1fr;gap:14px}.series-card{display:grid;grid-template-columns:42% 1fr;grid-template-rows:auto 1fr}.series-head{grid-column:1/-1;padding:14px 14px 0}.cover-window{grid-column:1;grid-row:2;height:240px;margin:12px 0 14px 12px}.series-cover{height:220px;max-width:88%}.series-copy{grid-column:2;grid-row:2;padding:14px 13px 14px}.series-copy h3{font-size:19px}.series-meta{font-size:8px;line-height:1.5;margin:5px 0 12px}.series-detail{font-size:10px;line-height:1.55;min-height:0;margin:0 0 11px}.skill-tags{gap:4px;margin-bottom:12px}.skill-tags span{font-size:8px;padding:5px 6px}.series-buy{display:block;padding-top:10px}.price{font-size:18px}.price-note{font-size:7px}.series-buy a{display:inline-block;margin-top:10px}.catalog-note{font-size:9px;line-height:1.5}.finder{grid-template-columns:1fr;gap:24px}.finder-copy>p:last-child{font-size:12px;margin-top:16px}.level-list{gap:8px}.level-row{padding:14px}.level-row strong{font-size:16px}.preview{grid-template-columns:1fr;gap:37px}.preview-card{min-height:275px;width:94%;margin-left:3%}.preview-letter{font-size:135px}.preview-copy>p:not(.eyebrow){font-size:12px}.events{padding:22px 21px 45px;min-height:690px}.event-top{font-size:7px;letter-spacing:.07em}.event-main{display:block;padding-top:56px}.event-copy h2{font-size:clamp(54px,12vw,75px)}.event-copy>p:not(.eyebrow){font-size:12px;max-width:340px}.ticket{position:absolute;right:10%;bottom:48px;width:178px;min-height:180px;padding:15px}.ticket strong{font-size:54px}.events:before{width:310px;right:-100px;top:35%}.story-grid{grid-template-columns:1fr;gap:18px}.story-grid>div{max-width:470px}.story-grid p{font-size:12px}.footer{grid-template-columns:1fr auto;padding:22px 18px;gap:13px}.footer-tag{grid-column:1/-1;grid-row:2;margin:0}.footer-social{grid-column:2;grid-row:1}.footer-note{font-size:8px;line-height:1.6;display:block}.footer-note span{display:block;margin-top:5px}}
+
+/* Hero overlap correction: keep brand wordmark out of the reading and cover area. */
+.wordmark{display:none}
+.hero-grid{padding-bottom:34px}
+.hero-bottom{z-index:4}
+/* Local demo basket and enquiry drawer */
+.nav-cta{border:0;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px}
+.basket-count{min-width:22px;height:22px;border-radius:50%;display:inline-grid;place-items:center;background:#f7f5ef;color:var(--forest);font-size:10px;padding:0 5px}
+.series-buy button{font:inherit;cursor:pointer;border:0}
+.series-buy .series-add{background:var(--forest);color:var(--cream);padding:11px 12px;border-radius:99px;font-size:10px;font-weight:700;white-space:nowrap;transition:transform .18s,background .18s}
+.series-buy .series-add:hover{transform:translateY(-2px);background:var(--forest2)}
+.series-buy .series-add span{color:#ff9cc2;margin-left:6px}
+.basket-layer{position:fixed;inset:0;z-index:1000;display:flex;justify-content:flex-end}
+.basket-layer[hidden]{display:none}
+.basket-scrim{position:absolute;inset:0;border:0;background:#041d15a6;backdrop-filter:blur(3px);cursor:pointer}
+.basket-drawer{position:relative;z-index:1;width:min(100%,480px);height:100%;height:100dvh;overflow-y:auto;background:var(--paper);padding:26px clamp(20px,4vw,34px) 28px;box-shadow:-18px 0 48px #0002;animation:drawer-in .24s ease-out}
+@keyframes drawer-in{from{transform:translateX(24px);opacity:.7}to{transform:translateX(0);opacity:1}}
+.basket-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.basket-head h2{font:700 34px/.98 var(--display);letter-spacing:-.04em;margin:5px 0 0;color:var(--forest)}
+.basket-close{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:transparent;font-size:23px;cursor:pointer;color:var(--forest)}
+.basket-subtitle{font-size:12px;color:var(--muted);line-height:1.6;margin:15px 0 18px}
+.basket-items{display:grid;gap:12px}
+.basket-item{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #e9e4da}
+.basket-item img{width:62px;height:82px;object-fit:contain;background:#f2eee4}
+.basket-item h3{font:700 17px var(--display);margin:0 0 4px;color:var(--forest)}
+.basket-item small{font:8px var(--mono);letter-spacing:.04em;color:#738078}
+.basket-item-price{font:700 15px var(--display);white-space:nowrap}
+.basket-item-controls{grid-column:2/-1;display:flex;align-items:center;gap:8px;margin-top:-7px}
+.qty-control{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.qty-control button{border:0;background:transparent;width:32px;height:32px;cursor:pointer;font-size:16px;color:var(--forest)}
+.qty-control output{min-width:28px;text-align:center;font-size:11px;font-weight:700}
+.remove-item{border:0;background:transparent;color:#7a5a63;text-decoration:underline;text-underline-offset:3px;font-size:10px;cursor:pointer;margin-left:5px}
+.basket-empty{padding:42px 20px;text-align:center;background:#f4f0e8;color:var(--muted);line-height:1.6;font-size:13px}
+.basket-empty strong{display:block;font:700 24px var(--display);color:var(--forest);margin-bottom:8px}
+.basket-summary{margin-top:22px;border-top:1px solid var(--line);padding-top:15px;display:flex;justify-content:space-between;align-items:baseline}
+.basket-summary span{font-size:11px;color:var(--muted)}
+.basket-summary strong{font:700 26px var(--display);color:var(--forest)}
+.basket-disclaimer{font-size:9px;line-height:1.6;color:#77847c;margin:9px 0 17px}
+.basket-actions{display:grid;gap:9px}
+.basket-primary,.basket-secondary{min-height:46px;padding:12px 15px;border-radius:99px;font-size:12px;font-weight:700;cursor:pointer}
+.basket-primary{border:0;background:var(--forest);color:var(--cream)}
+.basket-primary:hover{background:var(--forest2)}
+.basket-secondary{border:1px solid var(--forest);background:transparent;color:var(--forest)}
+.basket-primary:disabled{opacity:.45;cursor:not-allowed}
+.enquiry-view[hidden],.basket-view[hidden],.enquiry-result[hidden]{display:none}
+.enquiry-view{padding-top:18px}
+.enquiry-back{border:0;background:transparent;padding:0;color:var(--forest);font-size:11px;font-weight:700;cursor:pointer;margin-bottom:20px}
+.enquiry-view h3{font:700 27px var(--display);margin:0 0 8px;color:var(--forest)}
+.enquiry-view>p{font-size:11px;color:var(--muted);line-height:1.6;margin:0 0 17px}
+.enquiry-form{display:grid;gap:12px}
+.enquiry-form label{font-size:10px;font-weight:700;color:var(--forest);display:grid;gap:6px}
+.enquiry-form input,.enquiry-form textarea{width:100%;border:1px solid var(--line);border-radius:5px;background:white;padding:12px;font:13px var(--sans);color:var(--ink)}
+.enquiry-form input:focus,.enquiry-form textarea:focus{outline:2px solid var(--pink);outline-offset:1px}
+.enquiry-form textarea{min-height:74px;resize:vertical}
+.enquiry-result{margin-top:18px;padding:15px;background:#edf4ea;border-left:3px solid var(--leaf)}
+.enquiry-result strong{font:700 20px var(--display);color:var(--forest)}
+.enquiry-result pre{white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.6 var(--sans);color:#40594a}
+@media(max-width:640px){.basket-drawer{width:100%;padding:20px 18px 24px}.basket-head h2{font-size:30px}.basket-item{grid-template-columns:54px 1fr auto;gap:10px}.basket-item img{width:54px;height:74px}.basket-item h3{font-size:16px}.basket-item-price{font-size:14px}.series-buy .series-add{padding:10px 9px;font-size:9px}.hero-grid{padding-bottom:20px}}
+@media(prefers-reduced-motion:reduce){.basket-drawer{animation:none}}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body><div class="site">
-<header class="topbar"><a class="brand" href="#top" aria-label="Twiga Soma Africa home"><span class="brand-seal" aria-hidden="true">TS</span><span class="brand-name">Twiga <b>Soma</b><small>AFRICA</small></span></a><nav class="nav" aria-label="Main navigation"><a href="#books">Books</a><a href="#finder">Find my books</a><a href="#readers">Readers &amp; teaching</a><a href="#events">Events</a><a href="#story">Our story</a></nav><a class="nav-cta" href="#books">Explore the books <span>↗</span></a></header>
+<header class="topbar"><a class="brand" href="#top" aria-label="Twiga Soma Africa home"><span class="brand-seal" aria-hidden="true">TS</span><span class="brand-name">Twiga <b>Soma</b><small>AFRICA</small></span></a><nav class="nav" aria-label="Main navigation"><a href="#books">Books</a><a href="#finder">Find my books</a><a href="#readers">Readers &amp; teaching</a><a href="#events">Events</a><a href="#story">Our story</a></nav><button class="nav-cta" type="button" id="basket-trigger" aria-haspopup="dialog" aria-controls="basket-drawer" aria-expanded="false" aria-label="Open basket, 0 sets">Basket <span class="basket-count" id="basket-count" aria-live="polite">0</span></button></header>
 <main>
 <section class="hero" id="top"><div class="hero-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="hero-top mono"><span>KENYAN LEARNING, MADE JOYFUL</span><span>EARLY YEARS · BIG POSSIBILITIES</span></div>
 <div class="hero-grid"><div class="hero-copy"><p class="eyebrow"><span class="pink-dot"></span>THE FIRST PAGES MATTER</p><h1>Open a world<br>of <em>“I can.”</em></h1><p class="hero-lede">Colourful Twiga workbooks make room for little learners to practise, explore and grow—one satisfying page at a time.</p><div class="hero-actions"><a class="button" href="#books">Find their next book <span>↗</span></a><a class="text-link" href="#finder">Choose by school level <span>↓</span></a></div><p class="hero-note"><span class="mono">A THOUGHTFUL START</span><strong>PP1 · PP2 · Grade 1 &amp; 2</strong></p></div>
@@ -88,9 +148,9 @@
 <div class="marquee"><span>✳</span> For curious minds, caring grown-ups and the joy of a first right answer. <span>✳</span></div>
 <section class="books-section section-pad" id="books"><div class="section-head"><div><p class="eyebrow"><span class="pink-dot"></span>THE WORKBOOK COLLECTION</p><h2 class="section-title">A book for<br><em>what comes next.</em></h2></div><p class="section-intro">Browse by colour-coded series. Each set supports a different step in early language and mathematics.</p></div>
 <div class="series-grid">
-<article class="series-card"><div class="series-head mono"><span>PINK SERIES</span><span class="series-level">PP1</span></div><div class="cover-window"><img class="series-cover" src="https://theschoolbox.co.ke/wp-content/uploads/2023/10/Twiga-Books-Maths-Shapes-and-Colours-Workbook-1-Pink-Series-300x424.jpg" alt="Pink Series PP1 Shapes and Colours workbook cover" loading="lazy"></div><div class="series-copy"><h3>Pink Series</h3><p class="series-meta">8 WORKBOOKS · LANGUAGE &amp; MATHEMATICS</p><p class="series-detail">A gentle start with letters, first words, shapes and counting.</p><div class="skill-tags"><span>First words</span><span>Letters</span><span>Shapes</span><span>Counting</span></div><div class="series-buy"><div><strong class="price">KSh 4,000</strong><small class="price-note">REFERENCE PRICE · TO CONFIRM</small></div><a href="#finder">Explore set <span>↗</span></a></div></div></article>
-<article class="series-card blue"><div class="series-head mono"><span>BLUE SERIES</span><span class="series-level">PP2</span></div><div class="cover-window"><img class="series-cover" src="https://theschoolbox.co.ke/wp-content/uploads/2023/10/Twiga-Books-Mathematics-Take-Away-Book-7-Blue-Series-300x424.jpg" alt="Blue Series PP2 Take Away mathematics workbook cover" loading="lazy"></div><div class="series-copy"><h3>Blue Series</h3><p class="series-meta">9 WORKBOOKS · LANGUAGE &amp; MATHEMATICS</p><p class="series-detail">Build on early skills with sounds, number sense, adding and taking away.</p><div class="skill-tags"><span>Vowels</span><span>Sounds</span><span>Addition</span><span>Take away</span></div><div class="series-buy"><div><strong class="price">KSh 4,500</strong><small class="price-note">REFERENCE PRICE · TO CONFIRM</small></div><a href="#finder">Explore set <span>↗</span></a></div></div></article>
-<article class="series-card green"><div class="series-head mono"><span>GREEN SERIES</span><span class="series-level">GRADE 1 &amp; 2</span></div><div class="cover-window"><img class="series-cover" src="https://theschoolbox.co.ke/wp-content/uploads/2023/10/10-Multiplication-Workbooks-Phase-1-Green-series.png" alt="Green Series Grade 2 multiplication workbook cover" loading="lazy"></div><div class="series-copy"><h3>Green Series</h3><p class="series-meta">8 WORKBOOKS · LANGUAGE &amp; MATHEMATICS</p><p class="series-detail">Grow confidence with spelling, language, measurement and multiplication.</p><div class="skill-tags"><span>Spelling</span><span>Language</span><span>Measurement</span><span>Times tables</span></div><div class="series-buy"><div><strong class="price">KSh 4,800</strong><small class="price-note">REFERENCE PRICE · TO CONFIRM</small></div><a href="#finder">Explore set <span>↗</span></a></div></div></article>
+<article class="series-card"><div class="series-head mono"><span>PINK SERIES</span><span class="series-level">PP1</span></div><div class="cover-window"><img class="series-cover" src="https://theschoolbox.co.ke/wp-content/uploads/2023/10/Twiga-Books-Maths-Shapes-and-Colours-Workbook-1-Pink-Series-300x424.jpg" alt="Pink Series PP1 Shapes and Colours workbook cover" loading="lazy"></div><div class="series-copy"><h3>Pink Series</h3><p class="series-meta">8 WORKBOOKS · LANGUAGE &amp; MATHEMATICS</p><p class="series-detail">A gentle start with letters, first words, shapes and counting.</p><div class="skill-tags"><span>First words</span><span>Letters</span><span>Shapes</span><span>Counting</span></div><div class="series-buy"><div><strong class="price">KSh 4,000</strong><small class="price-note">REFERENCE PRICE · TO CONFIRM</small></div><button class="series-add" type="button" data-add-to-basket="pink" aria-label="Add Pink Series to basket">Explore set <span aria-hidden="true">↗</span></button></div></div></article>
+<article class="series-card blue"><div class="series-head mono"><span>BLUE SERIES</span><span class="series-level">PP2</span></div><div class="cover-window"><img class="series-cover" src="https://theschoolbox.co.ke/wp-content/uploads/2023/10/Twiga-Books-Mathematics-Take-Away-Book-7-Blue-Series-300x424.jpg" alt="Blue Series PP2 Take Away mathematics workbook cover" loading="lazy"></div><div class="series-copy"><h3>Blue Series</h3><p class="series-meta">9 WORKBOOKS · LANGUAGE &amp; MATHEMATICS</p><p class="series-detail">Build on early skills with sounds, number sense, adding and taking away.</p><div class="skill-tags"><span>Vowels</span><span>Sounds</span><span>Addition</span><span>Take away</span></div><div class="series-buy"><div><strong class="price">KSh 4,500</strong><small class="price-note">REFERENCE PRICE · TO CONFIRM</small></div><button class="series-add" type="button" data-add-to-basket="blue" aria-label="Add Blue Series to basket">Explore set <span aria-hidden="true">↗</span></button></div></div></article>
+<article class="series-card green"><div class="series-head mono"><span>GREEN SERIES</span><span class="series-level">GRADE 1 &amp; 2</span></div><div class="cover-window"><img class="series-cover" src="https://theschoolbox.co.ke/wp-content/uploads/2023/10/10-Multiplication-Workbooks-Phase-1-Green-series.png" alt="Green Series Grade 2 multiplication workbook cover" loading="lazy"></div><div class="series-copy"><h3>Green Series</h3><p class="series-meta">8 WORKBOOKS · LANGUAGE &amp; MATHEMATICS</p><p class="series-detail">Grow confidence with spelling, language, measurement and multiplication.</p><div class="skill-tags"><span>Spelling</span><span>Language</span><span>Measurement</span><span>Times tables</span></div><div class="series-buy"><div><strong class="price">KSh 4,800</strong><small class="price-note">REFERENCE PRICE · TO CONFIRM</small></div><button class="series-add" type="button" data-add-to-basket="green" aria-label="Add Green Series to basket">Explore set <span aria-hidden="true">↗</span></button></div></div></article>
 </div><p class="catalog-note">Prices are references from the existing concept and should be confirmed with Twiga Soma Africa.</p></section>
 <section class="library section-pad" id="readers"><div class="section-head"><div><p class="eyebrow"><span class="pink-dot"></span>BEYOND THE WORKBOOKS</p><h2 class="section-title">Stories to read.<br><em>Tools to teach.</em></h2></div><p class="section-intro">A welcoming collection for reading together at home and building lively, confident lessons in class.</p></div><div class="library-grid"><article class="resource-card"><div class="resource-art readers-art" aria-hidden="true"><div class="readers-stack"><div class="reader-volume"><span>TWIGA READERS</span><strong>Read<br>together</strong><span>ENGLISH · KISWAHILI</span></div><div class="reader-volume"><span>LEVEL TWO</span><strong>New words,<br>new worlds</strong><span>STORYBOOKS</span></div><div class="reader-volume"><span>LEVEL THREE</span><strong>Turn the<br>next page</strong><span>TWIGA SOMA</span></div></div></div><div class="resource-copy"><p class="resource-label">STORYBOOKS · ENGLISH &amp; KISWAHILI</p><h3>Twiga Readers</h3><p>Build a little reading ritual with stories grouped into Level One, Level Two and Level Three. Choose a starting point and grow into each next story.</p><div class="level-chips"><span>LEVEL ONE</span><span>LEVEL TWO</span><span>LEVEL THREE</span></div><a class="resource-link" href="https://twigasomaafrica.org/" target="_blank" rel="noreferrer">Explore Twiga Soma <span>↗</span></a></div></article><article class="resource-card"><div class="resource-art teaching-art" aria-hidden="true"><div class="teaching-sheet"><span>PHONICS <b>Aa</b></span><span>NUMBER SENSE <b>123</b></span><span>FRACTIONS <b>½</b></span><span>HANDWRITING <b>✎</b></span></div></div><div class="resource-copy"><p class="resource-label">FOR THE CLASSROOM</p><h3>Teaching resources</h3><p>Printable classroom materials for early literacy and numeracy—from phonics and handwriting practice to number work and fractions.</p><div class="level-chips"><span>PHONICS</span><span>NUMBER SENSE</span><span>HANDWRITING</span></div><a class="resource-link" href="https://twigasomaafrica.org/" target="_blank" rel="noreferrer">See the learning range <span>↗</span></a></div></article></div></section>
 <section class="teacher-section section-pad" id="teachers"><div class="teacher-head"><div><p class="eyebrow"><span class="pink-dot"></span>FOR TEACHERS &amp; SCHOOLS</p><h2 class="section-title">More confidence<br><em>in every classroom.</em></h2></div><p>Practical support for the people who help children discover what they can do—alongside book sets for PP1 through Grade 2.</p></div><div class="teacher-grid"><article class="teacher-card"><span class="mono">01 · BUILD PRACTICE</span><h3>Teacher training</h3><p>Training to make literacy and numeracy activities engaging, clear and easier to bring into daily teaching.</p></article><article class="teacher-card"><span class="mono">02 · MAKE IT HANDS-ON</span><h3>Classroom resources</h3><p>Printable materials to support phonics, handwriting, number sense and early mathematics lessons.</p></article><article class="teacher-card"><span class="mono">03 · LEARN TOGETHER</span><h3>Books for class sets</h3><p>Pink, Blue and Green Series workbooks to support learners from PP1 through Grade 2.</p></article></div></section>
@@ -100,5 +160,102 @@
 <section class="events" id="events"><div class="event-top mono"><span>LEARNING, TOGETHER</span><span>COMMUNITY · CONVERSATION · JOY</span></div><div class="event-main"><div class="event-copy"><p class="eyebrow"><span class="pink-dot"></span>MEET MS G IN PERSON</p><h2>Good things<br>happen <em>together.</em></h2><p>Ms G also hosts events for families and young learners. Dates and ticket details can be added here once confirmed.</p><a class="button" href="https://www.tiktok.com/@gracewaithira_ms.g" target="_blank" rel="noreferrer">Ask about upcoming events <span>↗</span></a></div><aside class="ticket"><span class="mono">YOUR NEXT GOOD DAY</span><strong>SOON</strong><span>Upcoming dates<br>to be announced</span></aside></div></section>
 <section class="story section-pad" id="story"><p class="eyebrow"><span class="pink-dot"></span>A NOTE ON THE JOURNEY</p><div class="story-grid"><h2 class="story-title">Learning should<br>feel like <em>possibility.</em></h2><div><p>Twiga Soma brings together books, teaching and moments of discovery to support children as they build early skills.</p><p>This independent concept gives families a welcoming place to explore the series and follow along with Ms G.</p><a class="text-link" href="https://www.tiktok.com/@gracewaithira_ms.g" target="_blank" rel="noreferrer">Follow Ms G <span>↗</span></a></div></div></section>
 </main>
+<div class="basket-layer" id="basket-layer" hidden><button class="basket-scrim" type="button" data-close-basket aria-label="Close basket"></button><aside class="basket-drawer" id="basket-drawer" role="dialog" aria-modal="true" aria-labelledby="basket-title" tabindex="-1"><div class="basket-head"><div><p class="mono">TWIGA SOMA · DEMO</p><h2 id="basket-title">Your basket</h2></div><button class="basket-close" type="button" data-close-basket aria-label="Close basket">×</button></div><div class="basket-view" id="basket-view"><p class="basket-subtitle">Review your workbook sets before preparing an order enquiry.</p><div class="basket-items" id="basket-items"></div><div class="basket-summary"><span>Reference subtotal</span><strong id="basket-subtotal">KSh 0</strong></div><p class="basket-disclaimer">Displayed prices are reference prices and need confirmation. This demo does not take payment or send orders.</p><div class="basket-actions"><button class="basket-primary" id="prepare-enquiry" type="button" disabled>Prepare order enquiry</button><button class="basket-secondary" type="button" data-close-basket>Keep browsing</button></div></div><div class="enquiry-view" id="enquiry-view" hidden><button class="enquiry-back" id="back-to-basket" type="button">← Back to basket</button><h3>Enquiry details</h3><p>Create a copyable draft to share with Twiga Soma Africa. Nothing is sent from this demo.</p><form class="enquiry-form" id="enquiry-form"><label>Your name<input name="customerName" autocomplete="name" required maxlength="80" placeholder="Name"></label><label>Phone or WhatsApp<input name="customerPhone" type="tel" autocomplete="tel" required maxlength="40" placeholder="+254…"></label><label>Anything else? <span>(optional)</span><textarea name="notes" maxlength="300" placeholder="Delivery area or a question"></textarea></label><button class="basket-primary" type="submit">Create enquiry draft</button></form><div class="enquiry-result" id="enquiry-result" hidden><strong>Draft ready to copy</strong><pre id="enquiry-copy-text"></pre><button class="basket-primary" id="copy-enquiry" type="button">Copy enquiry</button></div></div></aside></div>
 <footer class="footer"><a class="brand" href="#top"><span class="brand-seal" aria-hidden="true">TS</span><span class="brand-name">Twiga <b>Soma</b><small>AFRICA</small></span></a><p class="footer-tag mono">GROW THROUGH EVERY PAGE.</p><a class="footer-social" href="#readers">Readers &amp; teaching</a><a class="footer-social" href="https://www.tiktok.com/@gracewaithira_ms.g" target="_blank" rel="noreferrer">TikTok ↗</a><div class="footer-note"><span>Independent concept preview · Not an official or affiliated website</span><span>Workbook covers: <a href="https://theschoolbox.co.ke/brands/twiga-soma-africa/" target="_blank" rel="noreferrer">The School Box catalog</a></span></div></footer>
-</div></body></html>
+</div><script>
+(() => {
+  const products = {
+    pink: { id:"pink", name:"Pink Series PP1", books:8, price:4000, cover:"https://theschoolbox.co.ke/wp-content/uploads/2023/10/Twiga-Books-Maths-Shapes-and-Colours-Workbook-1-Pink-Series-300x424.jpg" },
+    blue: { id:"blue", name:"Blue Series PP2", books:9, price:4500, cover:"https://theschoolbox.co.ke/wp-content/uploads/2023/10/Twiga-Books-Mathematics-Take-Away-Book-7-Blue-Series-300x424.jpg" },
+    green: { id:"green", name:"Green Series Grade 1 & 2", books:8, price:4800, cover:"https://theschoolbox.co.ke/wp-content/uploads/2023/10/10-Multiplication-Workbooks-Phase-1-Green-series.png" }
+  };
+  const layer=document.getElementById("basket-layer");
+  const drawer=document.getElementById("basket-drawer");
+  const itemsNode=document.getElementById("basket-items");
+  const countNode=document.getElementById("basket-count");
+  const subtotalNode=document.getElementById("basket-subtotal");
+  const trigger=document.getElementById("basket-trigger");
+  const prepare=document.getElementById("prepare-enquiry");
+  const basketView=document.getElementById("basket-view");
+  const enquiryView=document.getElementById("enquiry-view");
+  const result=document.getElementById("enquiry-result");
+  let basket=[];
+  let previousFocus=null;
+  try {
+    const saved=JSON.parse(localStorage.getItem("twigaSomaDemoBasket")||"[]");
+    if(Array.isArray(saved)) basket=saved.filter(x=>products[x.id]&&Number.isInteger(x.qty)&&x.qty>0&&x.qty<=20).map(x=>({id:x.id,qty:x.qty}));
+  } catch (_) {}
+  const money=value=>"KSh "+new Intl.NumberFormat("en-KE",{maximumFractionDigits:0}).format(value);
+  const totalItems=()=>basket.reduce((n,item)=>n+item.qty,0);
+  const subtotal=()=>basket.reduce((n,item)=>n+products[item.id].price*item.qty,0);
+  function persist(){try{localStorage.setItem("twigaSomaDemoBasket",JSON.stringify(basket))}catch(_){}}
+  function render(){
+    countNode.textContent=String(totalItems());
+    trigger.setAttribute("aria-label","Open basket, "+totalItems()+" "+(totalItems()===1?"set":"sets"));
+    prepare.disabled=basket.length===0;
+    subtotalNode.textContent=money(subtotal());
+    if(!basket.length){
+      itemsNode.innerHTML='<div class="basket-empty"><strong>Your basket is waiting.</strong>Add a workbook set to get started.</div>';
+    } else {
+      itemsNode.innerHTML=basket.map(item=>{
+        const p=products[item.id];
+        return '<article class="basket-item" data-item="'+p.id+'"><img src="'+p.cover+'" alt="" loading="lazy"><div><h3>'+p.name+'</h3><small>'+p.books+' WORKBOOKS · REFERENCE PRICE</small></div><strong class="basket-item-price">'+money(p.price*item.qty)+'</strong><div class="basket-item-controls"><span class="qty-control"><button type="button" data-qty="-1" data-id="'+p.id+'" aria-label="Remove one '+p.name+'">−</button><output>'+item.qty+'</output><button type="button" data-qty="1" data-id="'+p.id+'" aria-label="Add one '+p.name+'">+</button></span><button class="remove-item" type="button" data-remove="'+p.id+'">Remove</button></div></article>';
+      }).join("");
+    }
+    persist();
+  }
+  function openBasket(){
+    previousFocus=document.activeElement;
+    layer.hidden=false;
+    trigger.setAttribute("aria-expanded","true");
+    document.body.style.overflow="hidden";
+    basketView.hidden=false;
+    enquiryView.hidden=true;
+    result.hidden=true;
+    requestAnimationFrame(()=>document.querySelector(".basket-close").focus());
+  }
+  function closeBasket(){
+    layer.hidden=true;
+    trigger.setAttribute("aria-expanded","false");
+    document.body.style.overflow="";
+    if(previousFocus&&typeof previousFocus.focus==="function") previousFocus.focus();
+  }
+  function add(id){
+    const item=basket.find(x=>x.id===id);
+    if(item){item.qty=Math.min(20,item.qty+1)}else{basket.push({id,qty:1})}
+    render();
+    openBasket();
+  }
+  document.querySelectorAll("[data-add-to-basket]").forEach(button=>button.addEventListener("click",()=>add(button.dataset.addToBasket)));
+  trigger.addEventListener("click",openBasket);
+  layer.addEventListener("click",event=>{
+    if(event.target.closest("[data-close-basket]"))closeBasket();
+    const qty=event.target.closest("[data-qty]");
+    if(qty){
+      const id=qty.dataset.id;
+      const item=basket.find(x=>x.id===id);
+      if(item){item.qty+=Number(qty.dataset.qty);if(item.qty<1)basket=basket.filter(x=>x.id!==id);if(item.qty>20)item.qty=20;render()}
+    }
+    const remove=event.target.closest("[data-remove]");
+    if(remove){basket=basket.filter(x=>x.id!==remove.dataset.remove);render()}
+  });
+  document.addEventListener("keydown",event=>{if(event.key==="Escape"&&!layer.hidden)closeBasket()});
+  prepare.addEventListener("click",()=>{if(!basket.length)return;basketView.hidden=true;enquiryView.hidden=false;result.hidden=true;document.getElementById("enquiry-view").scrollTop=0;document.getElementById("enquiry-form").querySelector("input").focus()});
+  document.getElementById("back-to-basket").addEventListener("click",()=>{enquiryView.hidden=true;basketView.hidden=false;prepare.focus()});
+  document.getElementById("enquiry-form").addEventListener("submit",event=>{
+    event.preventDefault();
+    const data=new FormData(event.currentTarget);
+    const lines=basket.map(item=>"- "+products[item.id].name+" × "+item.qty+" — "+money(products[item.id].price*item.qty));
+    const message=["TWIGA SOMA AFRICA — ORDER ENQUIRY (DEMO)","Name: "+String(data.get("customerName")).trim(),"Phone/WhatsApp: "+String(data.get("customerPhone")).trim(),"",...lines,"","Reference subtotal: "+money(subtotal()),"Note: Prices are for confirmation.",String(data.get("notes")||"").trim()].filter(Boolean).join("\n");
+    document.getElementById("enquiry-copy-text").textContent=message;
+    result.hidden=false;
+    document.getElementById("copy-enquiry").focus();
+  });
+  document.getElementById("copy-enquiry").addEventListener("click",async()=>{
+    const text=document.getElementById("enquiry-copy-text").textContent;
+    try{await navigator.clipboard.writeText(text);document.getElementById("copy-enquiry").textContent="Copied"}catch(_){document.getElementById("copy-enquiry").textContent="Select and copy the draft"}
+  });
+  render();
+})();
+</script>
+</body></html>
